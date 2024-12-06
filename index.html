@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questões e Gabarito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .question-container {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Questões Aleatórias 2GQ ESC III</h1>
+    <h3>Dúvidas? Msg para os monitores</h3>
+    <h3>Catarina: 84996038833 e Talyson: 85997877585</h3>
+    <div class="question-container" id="question-container">
+        <!-- O conteúdo das questões será inserido dinamicamente aqui -->
+    </div>
+    <div class="result" id="result"></div>
+
+    <script>
+        // Banco de questões e respostas
+        const questoes = [
+            {
+                pergunta: "1 - Numa determinada região hipotética, a letalidade por esquistossomose foi de 10% no ano de 2010. Durante esse ano ocorreram 50 óbitos da doença. Qual o número de casos de esquistossomose nessa comunidade em 2010?",
+                opcoes: ["A) 100", "B) 50", "C) 500", "D) 55"],
+                respostaCorreta: "C"
+            },
+            {
+                pergunta: "2 - No período em que F.A.N. teve leptospirose, hipoteticamente, Pernambuco registrou 50 novos casos de leptospirose, além dos 200 casos com tratamento em curso. Esses dados mostram que Pernambuco apresentou:",
+                opcoes: ["A) Incidência de 200 casos de leptospirose.", "B) Incidência de 150 casos de leptospirose.", "C) Prevalência de 50 casos de leptospirose.", "D) Prevalência de 250 casos de leptospirose."],
+                respostaCorreta: "D"
+            },
+            {
+                pergunta: "3 - Referente a epidemiologia ocupacional. Não é sistema e base de dados do Ministério da Saúde que deve incorporar informações de interesse da Saúde do Trabalhador:",
+                opcoes: ["A) O Sistema de Informações de Mortalidade (SIM).", "B) Sistema de Informações de Atenção Básica (SIAB).", "C) Sistema de Informações Geográficas (SIG).", "D) Sistema de Informações Hospitalares do SUS (SIH/SUS)."],
+                respostaCorreta: "C"
+            },
+            {
+                pergunta: "4 - No período em que o pai do paciente teve hanseníase, hipoteticamente, Olinda registrou 150 novos casos de hanseníase, além dos 400 casos com tratamento em curso. Esses dados mostram que, em 2015, esse município apresentou:",
+                opcoes: ["A) Prevalência de 250 casos de hanseníase.", "B) Prevalência de 150 casos de hanseníase.", "C) Incidência de 400 casos de hanseníase.", "D) Prevalência de 550 casos de hanseníase."],
+                respostaCorreta: "D"
+            },
+            {
+                pergunta: "5 - A irmã do paciente morreu por causas relacionadas ao parto. A taxa de mortalidade materna pode ser construída utilizando-se os seguintes Sistemas de Informações em Saúde:",
+                opcoes: ["A) Sistema de Informações Hospitalares e Sistema de Informação sobre Mortalidade.", "B) Sistema de Informação sobre Mortalidade e Sistema de Informações sobre Nascidos Vivos.", "C) Sistema de Informações Ambulatoriais e Sistema de Informação da Atenção Básica.", "D) Sistema de Informação de Agravos de Notificação e Sistema de Informações Hospitalares."],
+                respostaCorreta: "B"
+            },
+            {
+                pergunta: "6 - No período que F.G.H. teve dengue, o Estado estava passando por uma epidemia de dengue, zika e chikungunya. No interior, em uma cidade com 100.000hab, foi constatada epidemia de dengue. Foram registrados 100 casos da doença, dos quais 10 casos apresentaram Febre Hemorrágica da Dengue e que evoluíram para o óbito. Sabendo-se que naquele ano o total de óbitos na cidade foi de 1.000, podemos afirmar que:",
+                opcoes: ["A) A taxa de mortalidade de dengue no período foi de 2%.", "B) A prevalência da doença foi de 200 casos para 100.000hab.", "C) A taxa de letalidade de dengue foi de 10% dos casos.", "D) A incidência de dengue nesta localidade está em níveis pandêmicos."],
+                respostaCorreta: "C"
+            },
+            {
+                pergunta: "7 - Quando acontece de identificar um possível acidente trabalho em adolescente, o profissional deve fazer a notificação à Secretaria Municipal de Saúde em, no máximo, 24 horas a partir da(o):",
+                opcoes: ["A) Suspeita inicial.", "B) Diagnóstico definitivo.", "C) Isolamento do trabalhador.", "D) Afastamento laboral."],
+                respostaCorreta: "A"
+            },
+            {
+                pergunta: "8 - O paciente morava em uma cidade com 100.000hab e foram registrados 100 casos de covid-19 no mês que ele adoeceu, dos quais 10 evoluíram para o óbito. Sabendo-se que naquele ano o total de óbitos na cidade foi de 1.000, podemos afirmar que:",
+                opcoes: ["A) A taxa de mortalidade de covid no período foi de 2%.", "B) A prevalência da doença foi de 200 casos para 100.000hab.", "C) A taxa de letalidade de covid foi de 10% dos casos.", "D) A covid não poderia ser considerada uma doença emergente, mas somente remergente."],
+                respostaCorreta: "C"
+            },
+            {
+                pergunta: "9 - Dentre os sistemas de informação em saúde, aquele que é usado na construção do indicador de letalidade de meningite é:",
+                opcoes: ["A) SINAN (Sistema de Informação de Agravos de Notificação)", "B) AIH (Autorização de Internação Hospitalar)", "C) SI-API", "D) SINASC (Sistema de Informações sobre Nascidos Vivos)"],
+                respostaCorreta: "A"
+            },
+            {
+                pergunta: "10 - Sobre indicadores relacionados à atenção pré-natal, ao parto e ao puerpério, assinale a alternativa correta:",
+                opcoes: ["A) O coeficiente de mortalidade materna não permite analisar variações geográficas e temporais da mortalidade materna.", "B) É considerada morte materna o óbito de uma mulher apenas durante o período da gestação e parto.", "C) Para o cálculo do coeficiente de mortalidade materna, é preciso ter dados sobre o número de nascidos vivos.", "D) A Taxa de Mortalidade Infantil estima o risco de um nascido vivo morrer durante o primeiro semestre de vida."],
+                respostaCorreta: "C"
+            }
+        ];
+
+        let indiceAtual = 0; // Índice da questão atual
+        let pontuacao = 0; // Contador de respostas corretas
+
+        // Função para exibir a questão atual
+        function exibirQuestao() {
+            const container = document.getElementById('question-container');
+            const questao = questoes[indiceAtual];
+            
+            container.innerHTML = `
+                <p>${questao.pergunta}</p>
+                ${questao.opcoes.map((opcao, index) => `
+                    <button onclick="verificarResposta('${opcao.charAt(0)}')">${opcao}</button>
+                `).join('')}
+            `;
+        }
+
+        // Função para verificar se a resposta está correta
+        function verificarResposta(resposta) {
+            const questao = questoes[indiceAtual];
+            const resultado = document.getElementById('result');
+            
+            if (resposta === questao.respostaCorreta) {
+                pontuacao++;
+                resultado.innerHTML = `<span style="color: green;">Resposta correta!</span>`;
+            } else {
+                resultado.innerHTML = `<span style="color: red;">Resposta incorreta. A resposta correta é ${questao.respostaCorreta}.</span>`;
+            }
+
+            // Avançar para a próxima questão
+            indiceAtual++;
+            if (indiceAtual < questoes.length) {
+                setTimeout(() => {
+                    resultado.innerHTML = "";
+                    exibirQuestao();
+                }, 1500);
+            } else {
+                setTimeout(() => {
+                    exibirResultadoFinal();
+                }, 1500);
+            }
+        }
+
+        // Função para exibir o resultado final
+        function exibirResultadoFinal() {
+            const container = document.getElementById('question-container');
+            container.innerHTML = `
+                <h2>Você concluiu o quiz!</h2>
+                <p>Sua pontuação foi: ${pontuacao} de ${questoes.length}.</p>
+                <button onclick="reiniciarQuiz()">Reiniciar</button>
+            `;
+        }
+
+        // Função para reiniciar o quiz
+        function reiniciarQuiz() {
+            indiceAtual = 0;
+            pontuacao = 0;
+            exibirQuestao();
+        }
+
+        // Inicializar a primeira questão
+        exibirQuestao();
+    </script>
+
+</body>
+</html>
